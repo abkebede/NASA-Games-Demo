@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NASA GAMES Mini Mission Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div>
+    <div class="kicker">NASA GAMES</div>
+    <h1>Mini Mission Demonstration</h1>
+    <p>NASA data → physics calculation → survivability assessment → mission decision</p>
+  </div>
+  <div class="status" id="missionStatus">MISSION: READY</div>
+</header>
+
+<nav aria-label="Demo steps">
+  <a href="#briefing">1. Briefing</a>
+  <a href="#data">2. NASA Data</a>
+  <a href="#survivability">3. Survivability</a>
+  <a href="#decision">4. Decision</a>
+</nav>
+
+<main>
+<section id="briefing" class="panel">
+  <h2>1. Mission Briefing</h2>
+  <p>A four-person lunar south-pole crew is preparing for surface operations. Before authorizing EVA and rover activity, the mission team must evaluate the space-weather environment and determine whether the current conditions are compatible with continued operations.</p>
+  <div class="equation">P<sub>dyn</sub> = n<sub>p</sub> m<sub>p</sub> V<sub>sw</sub><sup>2</sup></div>
+  <p class="small">The NASA dataset is measured upstream near Earth and is used here as demonstration context. The operational thresholds in this mini-demo are educational assumptions, not NASA flight rules.</p>
+</section>
+
+<section id="data" class="panel">
+  <h2>2. Analyze NASA Data</h2>
+  <p>The bundled NASA/SPDF OMNI2 interval contains magnetic-field magnitude, proton density, solar-wind speed, and flow pressure.</p>
+  <button id="analyzeBtn">Analyze NASA Dataset</button>
+  <div class="metrics">
+    <div><span>Records</span><strong id="records">—</strong></div>
+    <div><span>Peak flow pressure</span><strong id="pressure">—</strong></div>
+    <div><span>Peak speed</span><strong id="speed">—</strong></div>
+    <div><span>Peak |B|</span><strong id="bmag">—</strong></div>
+  </div>
+  <canvas id="pressureChart" width="900" height="320" aria-label="Flow pressure plot"></canvas>
+  <div id="dataInterpretation" class="result">Run the analysis to generate the plot and summary statistics.</div>
+</section>
+
+<section id="survivability" class="panel">
+  <h2>3. Assess Survivability</h2>
+  <div class="equation">D(t) = ∫<sub>0</sub><sup>t</sup> Ḋ(t′) dt′</div>
+  <p>The teaching model converts the analyzed environment into an operational hazard index, applies shielding, and projects cumulative exposure into a system-health estimate.</p>
+  <button id="surviveBtn" disabled>Calculate Survivability</button>
+  <div class="metrics">
+    <div><span>EVA status</span><strong id="eva">—</strong></div>
+    <div><span>Shielded dose index, 12 h</span><strong id="dose">—</strong></div>
+    <div><span>System health</span><strong id="health">—</strong></div>
+    <div><span>Recommended action</span><strong id="recommendation">—</strong></div>
+  </div>
+  <canvas id="doseChart" width="900" height="320" aria-label="Cumulative dose plot"></canvas>
+  <div id="survivalInterpretation" class="result">Analyze the NASA dataset first.</div>
+</section>
+
+<section id="decision" class="panel">
+  <h2>4. Make the Mission Decision</h2>
+  <p>The team must choose an operational response and defend it using the calculated quantities.</p>
+  <div class="decision-grid">
+    <button class="decision" data-choice="Continue EVA">Continue EVA</button>
+    <button class="decision" data-choice="Delay EVA">Delay EVA</button>
+    <button class="decision" data-choice="Enter Storm Shelter">Enter Storm Shelter</button>
+  </div>
+  <div id="decisionResult" class="result">Complete the survivability calculation before making a decision.</div>
+  <div class="chain">
+    <strong>Computational chain</strong>
+    <span>NASA measurements</span><span>→</span><span>Space-weather quantities</span><span>→</span><span>Radiation exposure</span><span>→</span><span>System health</span><span>→</span><span>Mission decision</span>
+  </div>
+</section>
+</main>
+
+<footer>
+  NASA GAMES mini demonstration. Physics calculations are transparent; educational operational thresholds are explicitly separated from NASA measurements.
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
