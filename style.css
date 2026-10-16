@@ -1,1 +1,26 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#07131f;color:#eef4f8;line-height:1.5}header{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;padding:28px 5vw;background:#0d2235;border-bottom:1px solid #34506a}header h1{margin:3px 0 5px;font-size:28px}.kicker{font-size:12px;letter-spacing:.18em;font-weight:700}.status{border:1px solid #8fb1c8;padding:8px 12px;border-radius:6px;font-size:12px;font-weight:700}nav{position:sticky;top:0;z-index:10;display:flex;gap:10px;flex-wrap:wrap;padding:10px 5vw;background:#081725;border-bottom:1px solid #29445a}nav a{color:#dceaf4;text-decoration:none;padding:6px 8px;border-radius:5px}nav a:hover{background:#18334a}main{max-width:1040px;margin:auto;padding:22px}.panel{background:#0d2031;border:1px solid #29475f;border-radius:10px;padding:20px;margin-bottom:18px}.panel h2{margin-top:0}.small{font-size:12px;color:#b9c9d6}.equation{font-family:"Times New Roman",serif;font-size:24px;text-align:center;padding:12px;margin:14px 0;background:#081824;border:1px solid #2c4961;border-radius:7px}button{background:#e9f1f6;color:#07131f;border:none;border-radius:6px;padding:10px 14px;font-weight:700;cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}.metrics div{background:#081824;border:1px solid #29475f;border-radius:7px;padding:12px}.metrics span{display:block;font-size:11px;color:#a8bbc9}.metrics strong{display:block;font-size:18px;margin-top:4px}canvas{width:100%;height:auto;background:#fff;border-radius:6px;margin:8px 0}.result{margin-top:10px;padding:12px;border-left:3px solid #8fb1c8;background:#081824}.decision-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.decision.recommended{outline:3px solid #f0c960}.chain{margin-top:18px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:12px}.chain span{background:#081824;border:1px solid #29475f;border-radius:5px;padding:6px 8px}footer{padding:22px 5vw;text-align:center;color:#a8bbc9;font-size:12px}@media(max-width:760px){header{flex-direction:column}.metrics{grid-template-columns:1fr 1fr}.decision-grid{grid-template-columns:1fr}}
+
+/* Artemis mission physics track and team development */
+.track-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0}
+.track-day{display:flex;flex-direction:column;gap:3px;text-align:left;background:#10293d;color:#eef4f8;border:1px solid #3a5870}
+.track-day span{font-size:11px;font-weight:400;color:#b7cad8}
+.track-day.active{outline:2px solid #e7eef3;background:#18354d}
+.track-detail{background:#081824;border:1px solid #29475f;border-radius:8px;padding:14px;margin:12px 0 18px}
+.track-detail h3{margin:4px 0 5px}
+.eyebrow{display:block;font-size:9px;letter-spacing:.12em;font-weight:700;color:#9fb5c6}
+.track-columns{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.track-columns>div{background:#0d2031;border:1px solid #29475f;border-radius:6px;padding:10px}
+.physics-lab{display:grid;grid-template-columns:1.2fr 2fr auto;gap:10px;align-items:end;margin:12px 0}
+.physics-lab label{display:block;font-size:11px;color:#a8bbc9;margin-bottom:4px}
+.physics-lab select,.physics-lab input{width:100%;padding:9px;border-radius:5px;border:1px solid #567189;background:#f5f8fa;color:#07131f}
+.input-row{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.input-row label{font-size:10px}
+.physics-results strong{font-size:14px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.team-grid article{background:#081824;border:1px solid #29475f;border-radius:7px;padding:12px}
+.team-grid h3{margin:0 0 6px;font-size:15px}
+.role-list{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0 16px}
+.role-list span{background:#081824;border:1px solid #29475f;border-radius:16px;padding:6px 9px;font-size:11px}
+.team-lead{margin-top:16px;padding-top:10px;border-top:1px solid #29475f}
+@media(max-width:900px){.track-grid{grid-template-columns:repeat(2,1fr)}.track-columns,.team-grid{grid-template-columns:1fr 1fr}.physics-lab{grid-template-columns:1fr}}
+@media(max-width:560px){.track-grid,.track-columns,.team-grid{grid-template-columns:1fr}.input-row{grid-template-columns:1fr}}

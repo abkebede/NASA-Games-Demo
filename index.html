@@ -11,7 +11,7 @@
   <div>
     <div class="kicker">NASA GAMES</div>
     <h1>Mini Mission Demonstration</h1>
-    <p>NASA data → physics calculation → survivability assessment → mission decision</p>
+    <p>Mission physics → NASA data → calculation → decision → interdisciplinary team</p>
   </div>
   <div class="status" id="missionStatus">MISSION: READY</div>
 </header>
@@ -21,6 +21,8 @@
   <a href="#data">2. NASA Data</a>
   <a href="#survivability">3. Survivability</a>
   <a href="#decision">4. Decision</a>
+  <a href="#artemis">5. Artemis Physics Track</a>
+  <a href="#team">6. Development Team</a>
 </nav>
 
 <main>
@@ -74,10 +76,124 @@
     <span>NASA measurements</span><span>→</span><span>Space-weather quantities</span><span>→</span><span>Radiation exposure</span><span>→</span><span>System health</span><span>→</span><span>Mission decision</span>
   </div>
 </section>
+
+<section id="artemis" class="panel">
+  <h2>5. Artemis Mission Physics Track</h2>
+  <p>The Artemis mission track turns the mission timeline into a physics curriculum. Each mission stage leads to a physical principle, governing equations, a computational activity, a plot, and a student interpretation.</p>
+
+  <div class="track-grid">
+    <button class="track-day active" data-day="1"><strong>Day 1</strong><span>Launch & TLI</span></button>
+    <button class="track-day" data-day="2"><strong>Day 2</strong><span>Outbound Coast</span></button>
+    <button class="track-day" data-day="3"><strong>Day 3</strong><span>Communications</span></button>
+    <button class="track-day" data-day="4"><strong>Day 4</strong><span>Space Weather</span></button>
+    <button class="track-day" data-day="5"><strong>Day 5</strong><span>Radiation</span></button>
+    <button class="track-day" data-day="6"><strong>Day 6</strong><span>Lunar Flyby</span></button>
+    <button class="track-day" data-day="7"><strong>Day 7</strong><span>Imaging</span></button>
+    <button class="track-day" data-day="8"><strong>Day 8</strong><span>Thermal Control</span></button>
+    <button class="track-day" data-day="9"><strong>Day 9</strong><span>Re-entry</span></button>
+    <button class="track-day" data-day="10"><strong>Day 10</strong><span>Mission Synthesis</span></button>
+  </div>
+
+  <div class="track-detail">
+    <div>
+      <span class="eyebrow">MISSION PHASE</span>
+      <h3 id="trackTitle">Launch, Ascent, Parking Orbit, and TLI</h3>
+      <p id="trackPrinciple">Students study thrust, Newton's laws, gravity, orbital energy, and delta-v.</p>
+    </div>
+    <div class="equation" id="trackEquation">F<sub>net</sub> = ma &nbsp;&nbsp;&nbsp; Δv = I<sub>sp</sub>g<sub>0</sub> ln(m<sub>0</sub>/m<sub>f</sub>)</div>
+    <div class="track-columns">
+      <div>
+        <span class="eyebrow">COMPUTATIONAL ACTIVITY</span>
+        <p id="trackActivity">Use mission parameters to calculate acceleration and staged delta-v, then plot velocity or delta-v margin.</p>
+      </div>
+      <div>
+        <span class="eyebrow">STUDENT QUESTION</span>
+        <p id="trackQuestion">Does the calculated propulsion margin support the planned translunar injection?</p>
+      </div>
+      <div>
+        <span class="eyebrow">NASA GAMES CONNECTION</span>
+        <p id="trackConnection">Launch & Landing Readiness and Orbital Mechanics modules.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>Try a Mission-Physics Calculation</h3>
+  <div class="physics-lab">
+    <div>
+      <label for="physicsExample">Example</label>
+      <select id="physicsExample">
+        <option value="orbit">Orbital speed near Earth</option>
+        <option value="comm">Earth-Moon one-way light time</option>
+        <option value="thermal">Radiative heat rejection</option>
+      </select>
+    </div>
+    <div id="physicsInputs"></div>
+    <button id="runPhysicsBtn">Calculate and Plot</button>
+  </div>
+  <div class="metrics physics-results">
+    <div><span>Calculated quantity</span><strong id="physicsResult">—</strong></div>
+    <div><span>Physical interpretation</span><strong id="physicsInterpretation">—</strong></div>
+  </div>
+  <canvas id="physicsChart" width="900" height="320" aria-label="Mission physics plot"></canvas>
+
+  <div class="chain">
+    <strong>Student learning cycle</strong>
+    <span>Mission event</span><span>→</span><span>Physical principle</span><span>→</span><span>Equation</span><span>→</span><span>Notebook/code</span><span>→</span><span>Plot</span><span>→</span><span>Interpretation</span>
+  </div>
+</section>
+
+<section id="team" class="panel">
+  <h2>6. Building the NASA GAMES Development Team</h2>
+  <p>NASA GAMES is being developed as an interdisciplinary College of Science and Technology project. The goal is to combine scientific accuracy, computational transparency, game design, education, and mission operations in one student-development platform.</p>
+
+  <div class="team-grid">
+    <article>
+      <h3>Science & Engineering</h3>
+      <p>Validate physics, equations, units, assumptions, mission models, subsystem couplings, and Jupyter activities.</p>
+    </article>
+    <article>
+      <h3>Software & Data</h3>
+      <p>Develop the browser simulation, Python/Jupyter workflows, NASA-data pipelines, shared mission state, visualization, and testing.</p>
+    </article>
+    <article>
+      <h3>Game Design & Human Factors</h3>
+      <p>Develop player roles, mission events, scoring, narrative, interface flow, accessibility, and decision pressure.</p>
+    </article>
+    <article>
+      <h3>Education & Assessment</h3>
+      <p>Develop physics lessons, student training, assessment, instructor materials, and research on student learning.</p>
+    </article>
+    <article>
+      <h3>Mission Operations</h3>
+      <p>Define team communication, mission procedures, go/no-go decisions, logs, pilot missions, and post-mission debriefs.</p>
+    </article>
+  </div>
+
+  <h3>Initial Student Mission Roles</h3>
+  <div class="role-list">
+    <span>Mission Commander</span>
+    <span>Flight Director</span>
+    <span>Power & Thermal Engineer</span>
+    <span>Life-Support Engineer</span>
+    <span>Space-Weather Scientist</span>
+    <span>Radiation & System-Health Engineer</span>
+    <span>Communications Engineer</span>
+    <span>Rover Engineer</span>
+    <span>Science Lead</span>
+    <span>Data & Reliability Analyst</span>
+  </div>
+
+  <div class="result">
+    <strong>Current development target:</strong> validate one complete chain — NASA Data → Space Weather → Radiation → System Health → Survivability — then use it as the reference architecture for the other mission modules and the first interdisciplinary team pilot.
+  </div>
+
+  <p class="team-lead"><strong>Project Lead:</strong> Abebe Kebede Bahiru, Department of Physics, North Carolina A&amp;T State University, Greensboro, North Carolina 27411.</p>
+</section>
+
 </main>
 
 <footer>
-  NASA GAMES mini demonstration. Physics calculations are transparent; educational operational thresholds are explicitly separated from NASA measurements.
+  NASA GAMES mission-physics demonstration. Physics calculations are transparent; measured NASA data, educational assumptions, and mission decisions are explicitly distinguished.
 </footer>
 <script src="app.js"></script>
 </body>
